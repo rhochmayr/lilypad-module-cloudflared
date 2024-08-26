@@ -1,0 +1,35 @@
+{
+  "machine": {
+    "gpu": 0,
+    "cpu": 16000,
+    "ram": 131072
+  },
+  "job": {
+    "APIVersion": "V1beta1",
+    "Spec": {
+      "Deal": {
+        "Concurrency": 1
+      },
+      "Docker": {
+        "Entrypoint": [
+          "tunnel",
+          "--no-autoupdate",
+          "--hello-world"
+        ],
+        "Image": "cloudflare/cloudflared:latest"
+      },
+      "Engine": "Docker",
+      "Network": {
+        "Type": "Full"
+      },
+      "PublisherSpec": {
+        "Type": "IPFS"
+      },
+      "Resources": {
+        "GPU": ""
+      },
+      "Timeout": 1800,
+      "Verifier": "Noop"
+    }
+  }
+}
